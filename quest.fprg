@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tsagaan sariin buuz"/>
+        <attribute name="authors" value="Student"/>
+        <attribute name="about" value="APL121 BD1 - Tsagaan sariin buuz tootsoo"/>
+        <attribute name="saved" value="2026-10-28 05:32:09 PM"/>
+        <attribute name="created" value="2026-10-28 17:30:00"/>
+        <attribute name="edited" value="2026-10-28 17:30:00"/>
+        <attribute name="edited" value="RGVsbDtERVNLVE9QLTFQRElLOUo7MjAyNi0xMC0yODswNTozMjowOSBQTTsxOzI4MzY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="guests" type="Integer" array="False" size=""/>
+            <declare name="perPerson" type="Integer" array="False" size=""/>
+            <declare name="totalBuuz" type="Integer" array="False" size=""/>
+            <declare name="flour" type="Real" array="False" size=""/>
+            <declare name="meat" type="Real" array="False" size=""/>
+            <declare name="minutes" type="Real" array="False" size=""/>
+            <declare name="dailyBuuz" type="Integer" array="False" size=""/>
+            <declare name="remainder" type="Integer" array="False" size=""/>
+            <declare name="today" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <declare name="family1" type="Integer" array="False" size=""/>
+            <declare name="family2" type="Integer" array="False" size=""/>
+            <declare name="family3" type="Integer" array="False" size=""/>
+            <declare name="flourFunctionResult" type="Real" array="False" size=""/>
+            <output expression="&quot;=== TSAGAAN SARIIN BUUZ ===&quot;" newline="True"/>
+            <output expression="&quot;Zochdiin too (1-1000): &quot;" newline="False"/>
+            <input variable="guests"/>
+            <while expression="guests &lt; 1 or guests &gt; 1000">
+                <comment text="a&#13;&#10;"/>
+            </while>
+            <output expression="&quot;Neg hund nogdoh buuz (1-100): &quot;" newline="False"/>
+            <input variable="perPerson"/>
+            <while expression="perPerson &lt; 1 or perPerson &gt; 100">
+                <comment text="a"/>
+            </while>
+            <assign variable="totalBuuz" expression="guests * perPerson"/>
+            <assign variable="flourFunctionResult" expression="GurilTootsoh(totalBuuz)"/>
+            <assign variable="flour" expression="flourFunctionResult"/>
+            <assign variable="meat" expression="totalBuuz * 30.0 / 1000.0"/>
+            <assign variable="minutes" expression="totalBuuz * 20.0 / 100.0"/>
+            <output expression="&quot;--- BUUZNY TOOTSOO ---&quot;" newline="True"/>
+            <output expression="&quot;Niit buuz: &quot; &amp; totalBuuz" newline="True"/>
+            <output expression="&quot;Guril (kg): &quot; &amp; flour" newline="True"/>
+            <output expression="&quot;Mah (kg): &quot; &amp; meat" newline="True"/>
+            <output expression="&quot;Belteh hugatsaa (min): &quot; &amp; minutes" newline="True"/>
+            <if expression="totalBuuz &lt;= 100">
+                <then>
+                    <output expression="&quot;Angilal: Baga hemjee&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="totalBuuz &lt;= 500">
+                        <then>
+                            <output expression="&quot;Angilal: Dund hemjee&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Angilal: Ih hemjee&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="dailyBuuz" expression="totalBuuz / 5"/>
+            <assign variable="remainder" expression="totalBuuz mod 5"/>
+            <output expression="&quot;--- SHINIIN 1-5-NII HUSNEGT ---&quot;" newline="True"/>
+            <output expression="&quot;Udriin dugaar | Buuznii too&quot;" newline="True"/>
+            <for variable="i" start="1" end="5" direction="inc" step="1">
+                <comment text="a"/>
+            </for>
+            <output expression="&quot;--- GURVAN AILYN BUUZ ---&quot;" newline="True"/>
+            <output expression="&quot;1-r ailyn buuznii too (1-100000): &quot;" newline="False"/>
+            <input variable="family1"/>
+            <while expression="family1 &lt; 1 or family1 &gt; 100000">
+                <comment text="a&#13;&#10;"/>
+            </while>
+            <output expression="&quot;2-r ailyn buuznii too (1-100000): &quot;" newline="False"/>
+            <input variable="family2"/>
+            <while expression="family2 &lt; 1 or family2 &gt; 100000">
+                <comment text="a"/>
+            </while>
+            <output expression="&quot;3-r ailyn buuznii too (1-100000): &quot;" newline="False"/>
+            <input variable="family3"/>
+            <while expression="family3 &lt; 1 or family3 &gt; 100000">
+                <comment text="a"/>
+            </while>
+            <if expression="family1 &lt; family2">
+                <then>
+                    <assign variable="temp" expression="family1"/>
+                    <assign variable="family1" expression="family2"/>
+                    <assign variable="family2" expression="temp"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="family1 &lt; family3">
+                <then>
+                    <assign variable="temp" expression="family1"/>
+                    <assign variable="family1" expression="family3"/>
+                    <assign variable="family3" expression="temp"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="family2 &lt; family3">
+                <then>
+                    <assign variable="temp" expression="family2"/>
+                    <assign variable="family2" expression="family3"/>
+                    <assign variable="family3" expression="temp"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Ihesees baga ruu eremblev:&quot;" newline="True"/>
+            <output expression="family1" newline="True"/>
+            <output expression="family2" newline="True"/>
+            <output expression="family3" newline="True"/>
+            <if expression="guests &gt;= 1 and guests &lt;= 1000">
+                <then>
+                    <output expression="&quot;Zochdiin orolt zuv baina.&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Program duuslaa.&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="GurilTootsoh" type="Real" variable="result">
+        <parameters>
+            <parameter name="totalBuuz" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Real" array="False" size=""/>
+            <assign variable="result" expression="totalBuuz * 25.0 / 1000.0"/>
+            <comment text="Unsupported shape: return&#10; expression=&quot;result&quot;"/>
+        </body>
+    </function>
+</flowgorithm>
